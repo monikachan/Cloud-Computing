@@ -1,0 +1,12 @@
+h1 {
+        color: navy;
+        margin-left: 20px;
+        font: courier;
+        text-align: center;
+}
+form {
+color: maroon;
+background-image: url("http://www.learnbaes.ac.uk/images/CurriculumPhotos/Maths.png");
+height:500px;
+width:100%;
+}

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+        <head>
+
+
+                                <link rel= "stylesheet" type = "text/css" href= "{{url_for('static',filename='styles.css')}}">
+          </head>
+        <head>
+
+                <script src='https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js'>
+                </script>
+                <script>
+                        $(document).ready(function(e){
+    $('#PrimeForm').on('submit',function(){
+
+        event.preventDefault();
+
+            var formData = {
+               'Num': $('input[id=num]').val()
+            };
+            console.log(formData);
+            $.ajax({
+                type: 'POST',
+        url: '/is_prime',
+        data:formData,
+
+        success: function(json) {
+                <!--alert('output'+json);-->
+                     $('#res').val(json);
+                    }
+            });
+    });
+});
+                </script>
+
+
+</head>
+ <body>
+    <h1>Prime Number Check</h1>
+    <form id='PrimeForm'>
+     Enter a number: <input type="text" id="num"><br>
+     Result: <input type = "text" id="res" readonly><br>
+  <input type="submit" id='Submit' value="Submit">
+</form>
+
+  </body>
+</html>
